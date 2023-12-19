@@ -1,3 +1,4 @@
 {
-  "features": "db"
+  "features": "db",
+  "patch": "patches/rules.mk.diff"
 }

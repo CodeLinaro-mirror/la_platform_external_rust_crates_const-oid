@@ -11,4 +11,6 @@ MODULE_RUST_EDITION := 2021
 MODULE_RUSTFLAGS += \
 	--cfg 'feature="db"' \
 
+MODULE_LIBRARY_DEPS := \
+
 include make/library.mk
