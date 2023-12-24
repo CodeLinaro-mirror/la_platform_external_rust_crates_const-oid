@@ -2044,6 +2044,16 @@ pub mod rfc6960 {
     pub const ID_PKIX_OCSP_EXTENDED_REVOKE: crate::ObjectIdentifier =
         crate::ObjectIdentifier::new_unwrap("1.3.6.1.5.5.7.48.1.9");
 }
+pub mod rfc6962 {
+    pub const GOOGLE: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("1.3.6.1.4.1.11129");
+    pub const CT_PRECERT_SCTS: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("1.3.6.1.4.1.11129.2.4.2");
+    pub const CT_PRECERT_POISON: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("1.3.6.1.4.1.11129.2.4.3");
+    pub const CT_PRECERT_SIGNING_CERT: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("1.3.6.1.4.1.11129.2.4.4");
+}
 pub mod rfc7107 {
     pub const ID_SMIME: crate::ObjectIdentifier =
         crate::ObjectIdentifier::new_unwrap("1.2.840.113549.1.9.16");
@@ -2244,6 +2254,38 @@ pub mod rfc8284 {
     pub const JID_OBJECT: crate::ObjectIdentifier =
         crate::ObjectIdentifier::new_unwrap("1.3.6.1.1.23.1");
     pub const JID: crate::ObjectIdentifier = crate::ObjectIdentifier::new_unwrap("1.3.6.1.1.23.2");
+}
+pub mod rfc8410 {
+    pub const ID_EDWARDS_CURVE_ALGS: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("1.3.101");
+    pub const ID_X_25519: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("1.3.101.110");
+    pub const ID_X_448: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("1.3.101.111");
+    pub const ID_ED_25519: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("1.3.101.112");
+    pub const ID_ED_448: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("1.3.101.113");
+}
+pub mod rfc8894 {
+    pub const ID_VERI_SIGN: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("2.16.840.1.113733");
+    pub const ID_PKI: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("2.16.840.1.113733.1");
+    pub const ID_ATTRIBUTES: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("2.16.840.1.113733.1.9");
+    pub const ID_MESSAGE_TYPE: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("2.16.840.1.113733.1.9.2");
+    pub const ID_PKI_STATUS: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("2.16.840.1.113733.1.9.3");
+    pub const ID_FAIL_INFO: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("2.16.840.1.113733.1.9.4");
+    pub const ID_SENDER_NONCE: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("2.16.840.1.113733.1.9.5");
+    pub const ID_RECIPIENT_NONCE: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("2.16.840.1.113733.1.9.6");
+    pub const ID_TRANSACTION_ID: crate::ObjectIdentifier =
+        crate::ObjectIdentifier::new_unwrap("2.16.840.1.113733.1.9.7");
 }
 pub const DB: super::Database<'static> = super::Database(&[
     (&rfc1274::TEXT_ENCODED_OR_ADDRESS, "textEncodedORAddress"),
@@ -4077,6 +4119,10 @@ pub const DB: super::Database<'static> = super::Database(&[
         &rfc6960::ID_PKIX_OCSP_EXTENDED_REVOKE,
         "id-pkix-ocsp-extended-revoke",
     ),
+    (&rfc6962::GOOGLE, "google"),
+    (&rfc6962::CT_PRECERT_SCTS, "ct-precert-scts"),
+    (&rfc6962::CT_PRECERT_POISON, "ct-precert-poison"),
+    (&rfc6962::CT_PRECERT_SIGNING_CERT, "ct-precert-signing-cert"),
     (&rfc7107::ID_SMIME, "id-smime"),
     (&rfc7107::ID_MOD, "id-mod"),
     (&rfc7107::ID_CT, "id-ct"),
@@ -4185,4 +4231,18 @@ pub const DB: super::Database<'static> = super::Database(&[
     ),
     (&rfc8284::JID_OBJECT, "JIDObject"),
     (&rfc8284::JID, "jid"),
+    (&rfc8410::ID_EDWARDS_CURVE_ALGS, "id-edwards-curve-algs"),
+    (&rfc8410::ID_X_25519, "id-X25519"),
+    (&rfc8410::ID_X_448, "id-X448"),
+    (&rfc8410::ID_ED_25519, "id-Ed25519"),
+    (&rfc8410::ID_ED_448, "id-Ed448"),
+    (&rfc8894::ID_VERI_SIGN, "id-VeriSign"),
+    (&rfc8894::ID_PKI, "id-pki"),
+    (&rfc8894::ID_ATTRIBUTES, "id-attributes"),
+    (&rfc8894::ID_MESSAGE_TYPE, "id-messageType"),
+    (&rfc8894::ID_PKI_STATUS, "id-pkiStatus"),
+    (&rfc8894::ID_FAIL_INFO, "id-failInfo"),
+    (&rfc8894::ID_SENDER_NONCE, "id-senderNonce"),
+    (&rfc8894::ID_RECIPIENT_NONCE, "id-recipientNonce"),
+    (&rfc8894::ID_TRANSACTION_ID, "id-transactionID"),
 ]);
