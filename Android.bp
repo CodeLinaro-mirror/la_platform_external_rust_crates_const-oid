@@ -31,14 +31,27 @@ license {
     ],
 }
 
-rust_library_host {
+rust_library {
     name: "libconst_oid",
+    host_supported: true,
     crate_name: "const_oid",
     cargo_env_compat: true,
     cargo_pkg_version: "0.9.6",
     srcs: ["src/lib.rs"],
     edition: "2021",
     features: ["db"],
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.virt",
+    ],
+    product_available: true,
+    vendor_available: true,
+    visibility: [
+        "//external/rust/crates/der:__subpackages__",
+        "//external/rust/crates/x509-cert:__subpackages__",
+        "//packages/modules/Virtualization:__subpackages__",
+    ],
+
 }
 
 rust_library_rlib {
